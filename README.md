@@ -23,10 +23,10 @@ Supports common operations including:
 
 #### Install
 
-`deno install --allow-read --allow-write https://code4fukui.github.io/gltf-pipeline/gltf2glb.js`
-`deno install --allow-read --allow-write https://code4fukui.github.io/gltf-pipeline/glb2gltf.js`
-
-## Usage
+```sh
+deno install --allow-read --allow-write https://code4fukui.github.io/gltf-pipeline/gltf2glb.js
+deno install --allow-read --allow-write https://code4fukui.github.io/gltf-pipeline/glb2gltf.js
+```
 
 #### Converting a glTF to glb
 
