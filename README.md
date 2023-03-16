@@ -1,4 +1,4 @@
-# glTF Pipeline
+# glTF Pipeline ES modules
 
 [![License](https://img.shields.io/:license-apache-blue.svg)](https://github.com/CesiumGS/gltf-pipeline/blob/main/LICENSE.md)
 
