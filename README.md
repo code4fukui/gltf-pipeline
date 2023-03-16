@@ -19,6 +19,23 @@ Supports common operations including:
 
 ## Getting Started
 
+### Using gltf-pipeline as a command-line tool:
+
+#### Install
+
+`deno install --allow-read --allow-write https://code4fukui.github.io/gltf-pipeline/gltf2glb.js`
+`deno install --allow-read --allow-write https://code4fukui.github.io/gltf-pipeline/glb2gltf.js`
+
+## Usage
+
+#### Converting a glTF to glb
+
+`gltf2glb model.gltf`
+
+#### Converting a glb to glTF
+
+`glb2gltf model.glb`
+
 ### Using gltf-pipeline as a library:
 
 #### Converting a glTF to glb:
