@@ -1,6 +1,10 @@
-# glTF Pipeline ES modules
+# gltf-pipeline
 
-[![License](https://img.shields.io/:license-apache-blue.svg)](https://github.com/CesiumGS/gltf-pipeline/blob/main/LICENSE.md)
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
+[
+![License](https://img.shields.io/:license-apache-blue.svg)
+](LICENSE.md)
 
 <p align="center">
 <a href="https://www.khronos.org/gltf"><img src="doc/gltf.png" onerror="this.src='gltf.png'"/></a>
@@ -8,60 +12,72 @@
 
 Content pipeline tools for optimizing [glTF](https://www.khronos.org/gltf) assets by [Richard Lee](http://leerichard.net/) and the [Cesium team](https://cesium.com/).
 
-Supports common operations including:
+This is a port of `gltf-pipeline` to Deno as an ES module.
 
-- Converting glTF to glb (and reverse)
-- Saving buffers/textures as embedded or separate files
-- Converting glTF 1.0 models to glTF 2.0
-- Not supported [Draco](https://github.com/google/draco) mesh compression yet
+## Features
 
-`gltf-pipeline` is a ES module for browsers and Deno.
+- Convert glTF to glb (and vice versa)
+- Save buffers/textures as embedded or separate files
+- Convert glTF 1.0 models to glTF 2.0
+- Draco mesh compression support is planned but not yet implemented.
 
 ## Getting Started
 
-### Using gltf-pipeline as a command-line tool:
+### Using as a command-line tool
 
-#### Install
+**Install**
 
 ```sh
 deno install --allow-read --allow-write https://code4fukui.github.io/gltf-pipeline/gltf2glb.js
 deno install --allow-read --allow-write https://code4fukui.github.io/gltf-pipeline/glb2gltf.js
 ```
 
-#### Converting a glTF to glb
+**Convert a glTF to glb**
 
-`gltf2glb model.gltf`
+```sh
+gltf2glb model.gltf
+```
 
-#### Converting a glb to glTF
+**Convert a glb to glTF**
 
-`glb2gltf model.glb`
+```sh
+glb2gltf model.glb
+```
 
-### Using gltf-pipeline as a library:
+### Using as a library
 
-#### Converting a glTF to glb:
+**Convert a glTF to glb**
 
 ```javascript
 import { gltfToGlb } from "https://code4fukui.github.io/gltf-pipeline/lib/gltfToGlb.js";
+
 const gltf = JSON.parse(await Deno.readTextFile("model.gltf"));
 const results = await gltfToGlb(gltf);
+// results.glb is a Uint8Array containing the binary glb data
 console.log(results.glb);
 ```
 
-#### Converting a glb to glTF
+**Convert a glb to glTF**
 
 ```javascript
 import { glbToGltf } from "https://code4fukui.github.io/gltf-pipeline/lib/glbToGltf.js";
+
 const glb = await Deno.readFile("model.glb");
 const results = await glbToGltf(glb);
-conosle.log(results.gltf);
+// results.gltf is a JSON object
+console.log(results.gltf);
 ```
 
-### Running Test
+## Running Tests
 
-```
+```sh
 deno test -A gltfglb.test.js
 ```
 
 ## Contributions
 
-Pull requests are appreciated! Please use the same [Contributor License Agreement (CLA)](https://github.com/CesiumGS/cesium/blob/main/CONTRIBUTING.md) and [Coding Guide](https://github.com/CesiumGS/cesium/blob/main/Documentation/Contributors/CodingGuide/README.md) used for [Cesium](https://github.com/CesiumGS/cesium).
+Pull requests are appreciated. Please use the same [Contributor License Agreement (CLA)](https://github.com/CesiumGS/cesium/blob/main/CONTRIBUTING.md) and [Coding Guide](https://github.com/CesiumGS/cesium/blob/main/Documentation/Contributors/CodingGuide/README.md) as the original [Cesium](https://github.com/CesiumGS/cesium) project.
+
+## License
+
+[Apache 2.0](LICENSE.md)
